@@ -1,0 +1,10 @@
+set number
+set expandtab
+set ignorecase
+set smartcase
+set mouse=a
+set nobackup
+set paste
+
+syntax enable
+colorscheme slate

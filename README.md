@@ -15,9 +15,10 @@ My i3-gaps and i3blocks configs
     + i3blocks --> .config/i3/i3blocks
     + i3config --> .config/i3/config
 # I3blocks
-Most of the stuff is taken from github.com/vivien/i3blocks-contrib
+Most of the stuff is taken from https://github.com/vivien/i3blocks-contrib
++ Battery https://github.com/vivien/i3blocks-contrib/tree/master/battery
++ Volume https://github.com/vivien/i3blocks-contrib/tree/master/volume
++ Memory https://github.com/vivien/i3blocks-contrib/tree/master/memory
++ Shutdown menu https://github.com/vivien/i3blocks-contrib/tree/master/shutdown_menu
 
-  - Battery https://github.com/vivien/i3blocks-contrib/tree/master/battery
-  - Volume https://github.com/vivien/i3blocks-contrib/tree/master/volume
-  - Memory https://github.com/vivien/i3blocks-contrib/tree/master/memory
-  - Shutdown menu https://github.com/vivien/i3blocks-contrib/tree/master/shutdown_menu
+The links also have the instructions for using those

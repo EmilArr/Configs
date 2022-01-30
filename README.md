@@ -5,7 +5,7 @@ My i3-gaps and i3blocks configs
 1. Applications:
     - feh
     - xterm
-    - i3(-gaps)
+    - i3(-gaps), if you don't use i3-gaps then remove the i3gaps section in i3config
     - i3blocks
     - rofi
     - Things for i3blocks

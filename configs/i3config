@@ -47,15 +47,15 @@ floating_modifier $mod
 
 
 # start a terminal
-bindsym $mod+Return exec konsole
+bindsym $mod+Return exec xterm -bg black -fg white 
 
 # kill focused window
 bindsym $mod+Shift+q kill
 
 # start dmenu (a program launcher)
-bindsym $mod+d exec --no-startup-id dmenu_run
+bindsym $mod+shift+d exec dmenu
 # A more modern dmenu replacement is rofi:
-bindsym $mod+shift+d exec "rofi -modi drun,run -show drun"
+bindsym $mod+d exec "rofi -show drun  -theme arthur"
 # There also is i3-dmenu-desktop which only displays applications shipping a
 # .desktop file. It is a wrapper around dmenu, so you need that installed.
 # bindcode $mod+40 exec --no-startup-id i3-dmenu-desktop
@@ -158,10 +158,10 @@ bindsym $mod+Shift+e exec i3-msg exit
 mode "resize" {
         # These bindings trigger as soon as you enter the resize mode
 
-        # Pressing left will shrink the window’s width.
-        # Pressing right will grow the window’s width.
-        # Pressing up will shrink the window’s height.
-        # Pressing down will grow the window’s height.
+        # Pressing left will shrink the window's width.
+        # Pressing right will grow the window's width.
+        # Pressing up will shrink the window's height.
+        # Pressing down will grow the window's height.
         bindsym j resize shrink width 10 px or 10 ppt
         bindsym k resize grow height 10 px or 10 ppt
         bindsym l resize shrink height 10 px or 10 ppt
@@ -181,35 +181,61 @@ mode "resize" {
 
 bindsym $mod+r mode "resize"
 
+#VARIABLES BAR bbg, st, se
+set $bbg #354a2f
+set $st #FFEEFF
+set $se #14911A
+#VARIABLES WORKSPACES fw, iw, uw ++ bo(+bg), tx
+set $fwb #14911a
+set $fwt #332233
+set $iwb #354a2f
+set $iwt #bbbbbb
+set $uwb #00ff00
+set $uwt #000000
+
+
 # Start i3bar to display a workspace bar (plus the system information i3status
 # finds out, if available)
 bar {
 	position top
-	status_command i3blocks -c ~/.config/i3/i3blocks.conf
+	status_command i3blocks -c ~/.config/i3/i3blocks
 	separator_symbol |
 
 	colors {
-	        background #354A2F
-       		statusline #FFEEFF
-        	separator  #14911A
+	        background $bbg
+       		statusline $st
+        	separator  $se
 
-        	#                  border  background text
-        	focused_workspace  #14911a #14911A #332233
-        	active_workspace   #14911a #14911a #332233
-        	inactive_workspace #354a2f #354a2f #bbbbbb
-        	urgent_workspace   #00ff00 #00ff00 #000000
-        	#binding_mode       $background $red2 $white2
+        	#                  border background text
+        	focused_workspace  $fwb $fwb $fwt
+        	active_workspace   $fwb $fwb $fwt
+        	inactive_workspace $iwb $iwb $iwt
+        	urgent_workspace   $uwb $uwb $uwt
     }
 
 }
 
+#VARIAbLES WINDOW f, u, r, p ++ b, t, c
+set $fb #14911a
+set $ft #332233
+set $fc #14911a
+set $ub #354a2f
+set $ut #bbbbbb
+set $uc #354a2f
+set $rb #00ff00
+set $rt #000000
+set $rc #00ff00
+set $pb #495c43
+set $pb #000000
+set $pc #495c43
 
-# class                         border          background      text            indicator(?)       child_border
-client.focused                  #14911A         #14911A         #332233         $coloratt       #14911a
-client.focused_inactive         #14911A         #14911A         #443344         $coloratt       #354a2f
-client.unfocused                #354a2f         #354A2F         #bbbbbb         $coloratt       #354A2F
-client.urgent                   #00ff00         #00FF00         #000000         $coloratt       #00FF00
-client.placeholder              #495c43         #495c43         #000000         $coloratt       #495C43
+
+# class                         border background text  indicator(?) child_border
+client.focused                  $fb $fb $ft $coloratt $fc
+client.focused_inactive         $fb $fb $ft $coloratt $uc
+client.unfocused                $ub $ub $ut $coloratt $uc
+client.urgent                   $rb $rb $rt $coloratt $rc
+client.placeholder              $pb $pb $pt $coloratt $pc
 
 
 
@@ -217,10 +243,7 @@ client.placeholder              #495c43         #495c43         #000000         
 gaps inner 5
 gaps outer 5
 
-for_window [class="^.*"] border pixel 3 
-
+for_window [class="^.*"] border pixel 6
 
 #>>>>>>>Wallpaper with feh     	     [path to image]
-exec --no-startup-id feh --bg-scale ~/Pildid/forest.jpg
-
-
+exec --no-startup-id feh --bg-scale ~/Media/forest.jpg

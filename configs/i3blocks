@@ -1,0 +1,64 @@
+[start]
+full_text= 
+
+[time]
+command=date +%T
+interval=1
+color=#b9c592
+
+[date]
+command=date +%d/%m/%Y
+interval=1
+color=#b9c592
+
+
+# THESE ARE FROM: https://github.com/vivien/i3blocks-contrib
+
+[battery]
+command=/home/emlar/Scripts/battery.sh
+interval=30
+LABEL=Battery 
+color=#b9c592
+
+[volume]
+color=#b9c592
+command=~/Scripts/volume.sh
+#LABEL=# 
+LABEL=Volume 
+interval=once
+signal=10
+#STEP=5%
+#MIXER=[determined automatically]
+#SCONTROL=[determined automatically]
+#NATURAL_MAPPING=0
+
+[memory]
+command=~/Scripts/memory.sh
+label=Memory:  
+interval=10
+color=#b9c592
+
+[shutdown_menu]
+color=#b9c592
+full_text=Leave
+# If you are using FontAwesome, we recommend the power-off icon:
+# http://fontawesome.io/icon/power-off/
+command=/home/emlar/Scripts/shutdown.sh
+FG_COLOR=#b9c592
+BG_COLOR=#354A2F
+HLFG_COLOR=#b9c592
+HLBG_COLOR=#354a2f
+BORDER_COLOR=#354a2f
+#ROFI_TEXT=Menu:
+#ROFI_OPTIONS=-width 11 -location 3 -hide-scrollbar -bw 2
+#ZENITY_TITLE=Menu
+#ZENITY_TEXT=Action:
+#ZENITY_OPTIONS=--column= --hide-header
+#ENABLE_CONFIRMATIONS=true (must be true or false)
+#LAUNCHER=zenity (must be rofi or zenity)
+#LOCKSCRIPT=i3lock --color=${BG_COLOR#"#"}
+
+
+
+[end]
+full_text= 

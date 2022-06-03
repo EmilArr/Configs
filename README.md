@@ -4,7 +4,7 @@ My i3-gaps and i3blocks configs
 # Using this
 1. Applications:
     - feh
-    - xterm
+    - picom
     - i3(-gaps), if you don't use i3-gaps then remove the i3gaps section in i3config
     - i3blocks
     - rofi
